@@ -1,0 +1,2304 @@
+{
+	"info": {
+		"_postman_id": "fd7cb133-66ff-4c87-97a3-07934f140a8d",
+		"name": "SafhaGhadir",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24060829"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"yahya\",\r\n    \"email\": \"yahya@gmail.com\",\r\n    \"password\": \"Safha1!\",\r\n    \"passwordConfirmation\": \"Safha1!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/users/signup",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/users/all",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"users",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidHlwZSI6MiwiZW1haWwiOiJtdWhhbmFkQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiTXVoYW5hZCIsImlhdCI6MTY2ODUyNDI4NX0.iQG9VvmlTwm4ls9TJHpnjveeyaDd92_r0xB_4ViHCIk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/users",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"Ahmedd\",\n    \"password\": \"Safha1!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/users",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidHlwZSI6MiwiZW1haWwiOiJtdWhhbmFkQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiTXVoYW5hZCIsImlhdCI6MTY2ODUyNDI4NX0.iQG9VvmlTwm4ls9TJHpnjveeyaDd92_r0xB_4ViHCIk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Ali\",\r\n    \"email\": \"nasser@gmail.com\",\r\n    \"password\": \"Kyk2019K!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/users/edit",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"users",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"account\": \"nasser2026\",\r\n    \"password\": \"Safha1!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/users/login",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "get all users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/admins/allusers",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"admins",
+								"allusers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all admins",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/admins/all",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"admins",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/admins/show/7",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"admins",
+								"show",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get admin info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/admins",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"admins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/admins/9",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"admins",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"nasser2026\",\r\n    \"email\": \"nasser2026@gmail.com\",\r\n    \"password\": \"Safha1!\",\r\n    \"userTypeId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/admins/edit/3",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"admins",
+								"edit",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Muhanad\",\r\n    \"email\": \"muhanad@gmail.com\",\r\n    \"password\": \"Safha1!\",\r\n    \"passwordConfirmation\": \"Safha1!\",\r\n    \"userTypeId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/admins",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"admins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"account\": \"nasser2026@gmail.com\",\r\n    \"password\": \"Safha1!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/admins/login",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"admins",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "userInfo",
+			"item": [
+				{
+					"name": "add item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nickname",
+									"value": "Fighter 3",
+									"type": "text"
+								},
+								{
+									"key": "des",
+									"value": "I am a programmer",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/home/linuxpop/Pictures/Dalian-Ghadir Alselwi.png"
+								},
+								{
+									"key": "bgPic",
+									"type": "file",
+									"src": "/home/linuxpop/Pictures/Dalian-Ghadir Alselwi.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/userInfos",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"userInfos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all items",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/userInfos/all",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"userInfos",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/userInfos/2",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"userInfos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/userInfos/2",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"userInfos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nickname",
+									"value": "Surviver",
+									"type": "text"
+								},
+								{
+									"key": "des",
+									"value": "I am a programmer",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/home/linuxpop/Pictures/Dalian-Ghadir Alselwi.png"
+								},
+								{
+									"key": "bgPic",
+									"type": "file",
+									"src": "/home/linuxpop/Pictures/Dalian-Ghadir Alselwi.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/userInfos/edit/4",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"userInfos",
+								"edit",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "favorites",
+			"item": [
+				{
+					"name": "add item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsInR5cGUiOjIsImVtYWlsIjoiZmVyYXNAZ21haWwuY29tIiwidXNlcm5hbWUiOiJmZXJhcyIsImlhdCI6MTY2ODQ0NzIxN30.G3agKzy9ak6_kqXmNy4It-lP4yr2lO4XYiOv9QxTK_g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 2,\r\n    \"bookId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/favorites",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsInR5cGUiOjIsImVtYWlsIjoiZmVyYXNAZ21haWwuY29tIiwidXNlcm5hbWUiOiJmZXJhcyIsImlhdCI6MTY2ODQ0NzIxN30.G3agKzy9ak6_kqXmNy4It-lP4yr2lO4XYiOv9QxTK_g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/favorites/all",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"favorites",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/favorites/1",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"favorites",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete item",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/favorites/1",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"favorites",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "bookType",
+			"item": [
+				{
+					"name": "add item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryId\": 1,\r\n    \"bookId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/bookTypes",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"bookTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/bookTypes/all",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"bookTypes",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get item",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/bookTypes/1",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"bookTypes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete item",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/bookTypes/8",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"bookTypes",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "like",
+			"item": [
+				{
+					"name": "add like",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ManalToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 1,\r\n    \"likeableId\": 2,\r\n    \"likeableType\":\"review\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/likes/reviews/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"likes",
+								"reviews",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get like",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/likes/1",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"likes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comments",
+			"item": [
+				{
+					"name": "Add comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reviewId\" : 1,\r\n    \"content\": \"Nada is a good student\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/comments",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/comments/all",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"comments",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Comment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/comments/5",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"comments",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/comments/2",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"comments",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reviewId\" : 1,\r\n    \"content\": \"He is a good student\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/comments/edit/2",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"comments",
+								"edit",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "review",
+			"item": [
+				{
+					"name": "add review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\" : 1,\r\n    \"content\": \"It is a goob book\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/reviews",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/reviews/all",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"reviews",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/reviews/1",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"reviews",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookId\" : 1,\r\n    \"content\": \"this is the new review 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/reviews/edit/2",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"reviews",
+								"edit",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/reviews/3",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"reviews",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "conut",
+			"item": [
+				{
+					"name": "count all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/counts",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"counts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "rates",
+			"item": [
+				{
+					"name": "rate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bookId\":17,\n    \"rate\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/rates",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"rates"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "search",
+			"item": [
+				{
+					"name": "search all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"author\": \"Ghad\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/search",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "get all categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/categories/all",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"categories",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidHlwZSI6MiwiZW1haWwiOiJtdWhhbmFkQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiTXVoYW5hZCIsImlhdCI6MTY2ODUyNDI4NX0.iQG9VvmlTwm4ls9TJHpnjveeyaDd92_r0xB_4ViHCIk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Politics\",\r\n    \"des\":\"Politics is so essential\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/categories",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/categories/1",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"showig gat\",\r\n    \"des\":\"abdulmalek is not intellegent in showing gat\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/categories/edit/1",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"categories",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/categories/3",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"categories",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "book",
+			"item": [
+				{
+					"name": "get all books",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirURL}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/books/all",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"books",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Book",
+									"type": "text"
+								},
+								{
+									"key": "pagesCount",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "des",
+									"value": "Hellllo wkw",
+									"type": "text"
+								},
+								{
+									"key": "cover",
+									"type": "file",
+									"src": "/home/linuxpop/Downloads/Book covers/product-1.jpg"
+								},
+								{
+									"key": "publish",
+									"value": "2022-12-12",
+									"type": "text"
+								},
+								{
+									"key": "lang",
+									"value": "Ar",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "Nasser",
+									"type": "text"
+								},
+								{
+									"key": "ISBN",
+									"value": "B019FQXLLOffd",
+									"type": "text"
+								},
+								{
+									"key": "categoryId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "publisherId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "kindle",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "paper",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/books",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/books/1",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"books",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidHlwZSI6MSwiZW1haWwiOiJlbWFkYWlzaGFuQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiZW1hZDEyMyIsImlhdCI6MTY2ODA3MTQ0NH0.j4Ra_H2u5NZBe9AvOVFwevsQ3sAKpq7gf2nZkdTuW40",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Beni Oku1",
+									"type": "text"
+								},
+								{
+									"key": "userId",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "pagesCount",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "des",
+									"value": "Hello all",
+									"type": "text"
+								},
+								{
+									"key": "cover",
+									"value": "cover",
+									"type": "text"
+								},
+								{
+									"key": "publish",
+									"value": "2022-12-12 12:12:12",
+									"type": "text"
+								},
+								{
+									"key": "lang",
+									"value": "Ar",
+									"type": "text"
+								},
+								{
+									"key": "ISBN",
+									"value": "57578585875986",
+									"type": "text"
+								},
+								{
+									"key": "categoryId",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/books/edit/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/books/18",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"books",
+								"18"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User-Type",
+			"item": [
+				{
+					"name": "Add new Type",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"superadmin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/userTypes",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"userTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/userTypes/all",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"userTypes",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Type",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"user\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/userType/2",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"userType",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Type",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/userType/3",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"userType",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get  Type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/userType/1",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"userType",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Author",
+			"item": [
+				{
+					"name": "get all authors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsInR5cGUiOjMsImVtYWlsIjoibXVoYW5hZEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6Ik11aGFuYWQiLCJpYXQiOjE2Njg0MzE4NTR9._0x-2coON7JfSyW9Tcvbj8fVC7PdsO3LNTAZc6O3DhM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/authors/allAuthors",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"authors",
+								"allAuthors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Author",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsInR5cGUiOjMsImVtYWlsIjoibXVoYW5hZEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6Ik11aGFuYWQiLCJpYXQiOjE2Njg0MzE4NTR9._0x-2coON7JfSyW9Tcvbj8fVC7PdsO3LNTAZc6O3DhM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/authors/",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"authors",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Author",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"gadir\",\r\n    \"password\": \"Nasser1@23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/authers/14",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"authers",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update author",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsInR5cGUiOjMsImVtYWlsIjoibXVoYW5hZEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6Ik11aGFuYWQiLCJpYXQiOjE2Njg0MzE4NTR9._0x-2coON7JfSyW9Tcvbj8fVC7PdsO3LNTAZc6O3DhM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Almuhanad\",\r\n    \"email\": \"muhanad@gmail.com\",\r\n    \"password\": \"Safha1!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/authors/edit",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"authors",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "publisher Copy",
+			"item": [
+				{
+					"name": "New publisher",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Simon & Schuster Audio\",\r\n    \"des\": \"ali the best puplisher\",\r\n    \"bookId\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/publishers",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"publishers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all publishers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsInR5cGUiOjIsImVtYWlsIjoiYWxpaWlAZ21haWwuY29tIiwidXNlcm5hbWUiOiJhbGkgd2l0aCB0b2tlbiIsImlhdCI6MTY2NzIzODIxNH0.Pldja9htNzIRr1td-ahcAp57c22va58UdMdzxANDbfE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/publishers/all",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"publishers",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get publisher",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsInR5cGUiOjIsImVtYWlsIjoiYWxpaWlAZ21haWwuY29tIiwidXNlcm5hbWUiOiJhbGkgd2l0aCB0b2tlbiIsImlhdCI6MTY2NzIzODIxNH0.Pldja9htNzIRr1td-ahcAp57c22va58UdMdzxANDbfE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/publishers/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"publishers",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update publisher",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsInR5cGUiOjIsImVtYWlsIjoiYWxpaWlAZ21haWwuY29tIiwidXNlcm5hbWUiOiJhbGkgd2l0aCB0b2tlbiIsImlhdCI6MTY2NzIzODIxNH0.Pldja9htNzIRr1td-ahcAp57c22va58UdMdzxANDbfE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Simon & Schuster Audio\",\n    \"des\": \"Simon & Schuster is an American publishing company and a subsidiary of Paramount Global. It was founded in New York City on January 2, 1924 by Richard L. Simon and M. Lincoln Schuster.\",\n    \"bookId\": \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/publishers/edit/1",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"publishers",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete publisher",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsInR5cGUiOjIsImVtYWlsIjoiYWxpaWlAZ21haWwuY29tIiwidXNlcm5hbWUiOiJhbGkgd2l0aCB0b2tlbiIsImlhdCI6MTY2NzIzODIxNH0.Pldja9htNzIRr1td-ahcAp57c22va58UdMdzxANDbfE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/publishers/3",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"publishers",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "like Copy",
+			"item": [
+				{
+					"name": "Add like to review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{GhadirToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{GhadirURL}}/likes/reviews/1",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"likes",
+								"reviews",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add like to Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidHlwZSI6bnVsbCwiZW1haWwiOiJodXNzYW1AZ21haWwuY29tIiwidXNlcm5hbWUiOiJIVXNzZWFtIiwiaWF0IjoxNjY3Mjg4OTUwfQ.zgaawHjF9_HpL81BhYsdT6gM7HweS5cVKM_tvXDva2U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"reviewId\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/likes/reviews",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"likes",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all likes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/likes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"likes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get like",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/likes/3",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"likes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete like",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{GhadirURL}}/likes/4",
+							"host": [
+								"{{GhadirURL}}"
+							],
+							"path": [
+								"likes",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
